@@ -1,6 +1,51 @@
-<app-header></app-header>
-<P>Hi Welcome to authors list</P>
-<div *ngFor="let author of authorList" style="margin-top:12px;">
-    {{author.firstName}}
+<div class="container">
+    <app-header></app-header>
+        <div class="wrapper">
+            <div class="row">
+                <div class="column-4" *ngFor="let author of authorList; index as i;">
+                    <div class="card">
+                        <figure class="card-figure">
+                            <img [src]="author.image" style="width: 100%; height: 100%"/>
+                        </figure>
+                        <div class="card-body">
+                            <div>
+                                <h2 class="card-title">
+                                    {{author.firstName}} {{author.lastName}}
+                                </h2>    
+                            </div>
+                            <div>
+                                <span class="displayTitle">Organization:</span>
+                                <span class="breakWord">{{author.company}}</span>
+                            </div>
+                            <div>
+                                <span class="displayTitle">Job Title:</span>
+                                <span class="breakWord">{{author.jobTitle}}</span>
+                            </div>    
+                            <div *ngIf="hiddenItems[i]">
+                                <div>
+                                    <span class="displayTitle">Email:</span>
+                                    <span class="breakWord">{{author.email}}</span>
+                                </div>
+                                <div>
+                                    <span class="displayTitle">Job Description:</span>
+                                    <span><p>{{author.jobDescription}}</p></span>
+                                </div>
+                            </div>
+                            <div class="toggleDetails" (click)="hiddenItems[i]=!hiddenItems[i]">
+                                <div [ngClass]="{'toggleSvg': hiddenItems[i] === true}" class="addintionalInfo">
+                                    <svg viewBox="0 0 34 34" aria-hidden="true">
+                                        <path fill="#000000" d="M16.98 26.66L.47 10.11l1.06-1.06 15.45 15.49L32.47 9.09l1.06 1.06-16.55 16.51z"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <app-footer></app-footer>
 </div>
-<app-footer></app-footer>
+
+    
+
+

@@ -1,0 +1,28 @@
+@mixin border-box
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+
+@mixin transform($deg)
+    transform: rotate($deg)
+    -webkit-transform: rotate($deg)
+    -ms-transform: rotate($deg)
+
+@mixin border-radii($topleft, $topright, $bottomright, $bottomleft)
+    border-top-left-radius: $topleft
+    border-top-right-radius: $topright
+    border-bottom-right-radius: $bottomright
+    border-bottom-left-radius: $bottomleft
+    -webkit-border-top-left-radius: $topleft
+    -webkit-border-top-right-radius: $topright
+    -webkit-border-bottom-right-radius: $bottomright
+    -webkit-border-bottom-left-radius: $bottomleft
+    -moz-border-radius-topleft: $topleft
+    -moz-border-radius-topright: $topright
+    -moz-border-radius-bottomright: $bottomright
+    -moz-border-radius-bottomleft: $bottomleft
+
+
+
+    
+    

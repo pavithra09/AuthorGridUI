@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthorListService } from './service/author-list-service';
 import { AuthorListModel } from './model/author-list-model'
 
@@ -7,13 +7,11 @@ import { AuthorListModel } from './model/author-list-model'
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'authorgrid';
-
   authorList: AuthorListModel[] = [];
-  loading: boolean = false;
-  errorMessage: any;
- 
+  hiddenItems: any[] = [];
+  
   constructor(private authorlistservice: AuthorListService) {
   }
 
